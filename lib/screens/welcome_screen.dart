@@ -1,5 +1,7 @@
+import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:finease/widgets/custom_scafold.dart';
+import 'package:finease/componentes/home_screen_buttons.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -16,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                       text: const TextSpan(children: [
                         TextSpan(
-                            text: 'Welcome to EaseFin!\n',
+                            text: 'Bem -vindo ao Easefin\n',
                             style: TextStyle(
                                 fontSize: 45.0,
                                 fontWeight: FontWeight.w600,
@@ -25,7 +27,19 @@ class WelcomeScreen extends StatelessWidget {
                             text:
                                 '\nOrganize suas finanças de maneira inteligente.',
                             style: TextStyle(fontSize: 20, color: Colors.white))
-                      ])))))
+                      ]))))),
+      const Row(
+        children: [
+          Column(children: [
+            HomeScreenButton(appRoute: AppRoutes.logIn, text: "Log in")
+          ]),
+          Column(
+            children: [
+              HomeScreenButton(appRoute: AppRoutes.signUp, text: "Sign up")
+            ],
+          )
+        ],
+      )
     ]));
   }
 }
