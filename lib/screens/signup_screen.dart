@@ -13,29 +13,34 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return CustomScaffold(
-    child: Form(
-      child: Column(
-        children: <Widget>[
-          Image.asset(
-            '../../assets/images/logop.png', 
-            width: 150, 
-            height: 150, 
-          ),
-          InputText(text: "Nome", hint: "Digite seu nome e sobrenome"),
-          const SizedBox(height: 16),
-          InputText(text: "Email", hint: "Digite seu email"),
-          const SizedBox(height: 16),
-          InputPassword(text: "Senha(mínimo de 6 caracteres)", hint: "Crie uma senha"),
-          const SizedBox(height: 16),
-          InputPassword(text: "Confirmar senha", hint: "Confirme sua senha"),
-          const SizedBox(height: 40),
-          DefaultScreenButton(appRoute: AppRoutes.userHome, text: "Criar conta"),
-          const SizedBox(height: 16),
-          TextScreenButton(appRoute: AppRoutes.logIn, textGray: "Já tem uma conta?", textBlue: " Fazer login."),
-        ],
+    return CustomScaffold(
+      child: Form(
+        child: Column(
+          children: <Widget>[
+            Image.asset(
+              'assets/images/logop.png',
+              width: 150,
+              height: 150,
+            ),
+            InputText(text: "Nome", hint: "Digite seu nome e sobrenome"),
+            const SizedBox(height: 16),
+            InputText(text: "Email", hint: "Digite seu email"),
+            const SizedBox(height: 16),
+            InputPassword(
+                text: "Senha(mínimo de 6 caracteres)", hint: "Crie uma senha"),
+            const SizedBox(height: 16),
+            InputPassword(text: "Confirmar senha", hint: "Confirme sua senha"),
+            const SizedBox(height: 40),
+            DefaultScreenButton(
+                appRoute: AppRoutes.userHome, text: "Criar conta"),
+            const SizedBox(height: 16),
+            TextScreenButton(
+                appRoute: AppRoutes.logIn,
+                textGray: "Já tem uma conta?",
+                textBlue: " Fazer login."),
+          ],
+        ),
       ),
-    ),
-  );
+    );
   }
 }

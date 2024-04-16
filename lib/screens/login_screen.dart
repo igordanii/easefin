@@ -11,35 +11,40 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return CustomScaffold(
-    child: Form(
-      child: Column(
-        children: <Widget>[
-          Image.asset(
-            '../../assets/images/logop.png', 
-            width: 150, 
-            height: 150, 
-          ),
-          InputText(text: "Email", hint: "Digite seu email"),
-          const SizedBox(height: 16),
-          InputPassword(text: "Senha", hint: "Digite seu senha"),
-          const SizedBox(height: 16),
-          Container(
-            alignment: Alignment.centerRight,
-            child: TextButton(
-              onPressed: () {
-                // Navigator.pushNamed(context,  AppRoutes.logIn); Rota para tela de recuperação
-              },
-              child: Text('Esqueci minha senha', style: const TextStyle(color: Color.fromRGBO(6, 88, 246, 1))),
+    return CustomScaffold(
+      child: Form(
+        child: Column(
+          children: <Widget>[
+            Image.asset(
+              'assets/images/logop.png',
+              width: 150,
+              height: 150,
             ),
-          ),
-          const SizedBox(height: 40),
-          DefaultScreenButton(appRoute: AppRoutes.userHome, text: "Entrar"),
-          const SizedBox(height: 16),
-          TextScreenButton(appRoute: AppRoutes.signUp, textGray: "Ainda não possui conta?", textBlue: " Criar conta."),
-        ],
+            InputText(text: "Email", hint: "Digite seu email"),
+            const SizedBox(height: 16),
+            InputPassword(text: "Senha", hint: "Digite seu senha"),
+            const SizedBox(height: 16),
+            Container(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () {
+                  // Navigator.pushNamed(context,  AppRoutes.logIn); Rota para tela de recuperação
+                },
+                child: Text('Esqueci minha senha',
+                    style:
+                        const TextStyle(color: Color.fromRGBO(6, 88, 246, 1))),
+              ),
+            ),
+            const SizedBox(height: 40),
+            DefaultScreenButton(appRoute: AppRoutes.userHome, text: "Entrar"),
+            const SizedBox(height: 16),
+            TextScreenButton(
+                appRoute: AppRoutes.signUp,
+                textGray: "Ainda não possui conta?",
+                textBlue: " Criar conta."),
+          ],
+        ),
       ),
-    ),
-  );
+    );
   }
 }

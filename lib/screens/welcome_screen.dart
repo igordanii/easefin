@@ -9,30 +9,30 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return CustomScaffold(
-    child: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center, 
-        children: [
-          Flexible(
-            child: Image.asset(
-              '../../assets/images/logo.png', 
-              width: 300, 
-              height: 300, 
-              fit: BoxFit.contain, 
+    return CustomScaffold(
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(
+              child: Image.asset(
+                'assets/images/logo.png',
+                width: 300,
+                height: 300,
+                fit: BoxFit.contain,
+              ),
             ),
-          ), 
-          const Column(
-            children: [
-              DefaultScreenButton(appRoute: AppRoutes.logIn, text: "Entrar"),
-              SizedBox(height: 20), 
-              HomeScreenButton(appRoute: AppRoutes.signUp, text: "Criar uma conta"),
-            ],
-          ),
-        ],
+            const Column(
+              children: [
+                DefaultScreenButton(appRoute: AppRoutes.logIn, text: "Entrar"),
+                SizedBox(height: 20),
+                HomeScreenButton(
+                    appRoute: AppRoutes.signUp, text: "Criar uma conta"),
+              ],
+            ),
+          ],
+        ),
       ),
-    ),
-  );
-}
-
+    );
+  }
 }
