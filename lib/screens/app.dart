@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../screens/welcome_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/signup_screen.dart';
+import '../screens/home_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,6 +17,7 @@ class App extends StatelessWidget {
         AppRoutes.home: (context) => WelcomeScreen(),
         AppRoutes.logIn: (context) => LoginScreen(),
         AppRoutes.signUp: (context) => SignupScreen(),
+        AppRoutes.userHome: (context) => HomeScreen(),
       },
       title: 'EaseFin',
       theme: ThemeData(

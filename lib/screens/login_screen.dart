@@ -2,13 +2,12 @@ import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:finease/widgets/custom_scafold.dart';
 import 'package:finease/componentes/default_screen_buttons.dart';
+import 'package:finease/componentes/text_screen_buttons.dart';
 import 'package:finease/componentes/input_text.dart';
 import 'package:finease/componentes/input_password.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-  static const colorBlue = Color.fromRGBO(6, 88, 246, 1);
-  static const colorGray = Color.fromRGBO(67, 73, 85, 1);
 
   @override
   Widget build(BuildContext context) {
@@ -29,31 +28,15 @@ class LoginScreen extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: TextButton(
               onPressed: () {
-                
+                // Navigator.pushNamed(context,  AppRoutes.logIn); Rota para tela de recuperação
               },
               child: Text('Esqueci minha senha', style: const TextStyle(color: Color.fromRGBO(6, 88, 246, 1))),
             ),
           ),
           const SizedBox(height: 40),
-          DefaultScreenButton(appRoute: AppRoutes.logIn, text: "Entrar"),
+          DefaultScreenButton(appRoute: AppRoutes.userHome, text: "Entrar"),
           const SizedBox(height: 16),
-          TextButton(
-            onPressed: () {
-                  // Handle create account.
-            },
-            child: RichText(
-              text: TextSpan(
-                text: 'Ainda não possui conta?',
-                style: TextStyle(color: colorGray),
-                children: [
-                  TextSpan(
-                    text: ' Criar conta',
-                    style: TextStyle(color: colorBlue),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          TextScreenButton(appRoute: AppRoutes.signUp, textGray: "Ainda não possui conta?", textBlue: " Criar conta."),
         ],
       ),
     ),

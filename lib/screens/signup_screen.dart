@@ -2,6 +2,7 @@ import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:finease/widgets/custom_scafold.dart';
 import 'package:finease/componentes/default_screen_buttons.dart';
+import 'package:finease/componentes/text_screen_buttons.dart';
 import 'package:finease/componentes/input_text.dart';
 import 'package:finease/componentes/input_password.dart';
 
@@ -29,25 +30,9 @@ class SignupScreen extends StatelessWidget {
           const SizedBox(height: 16),
           InputPassword(text: "Confirmar senha", hint: "Confirme sua senha"),
           const SizedBox(height: 40),
-          DefaultScreenButton(appRoute: AppRoutes.logIn, text: "Criar conta"),
+          DefaultScreenButton(appRoute: AppRoutes.userHome, text: "Criar conta"),
           const SizedBox(height: 16),
-          TextButton(
-            onPressed: () {
-                  // Handle create account.
-            },
-            child: RichText(
-              text: TextSpan(
-                text: 'Já tem uma conta?',
-                style: TextStyle(color: colorGray),
-                children: [
-                  TextSpan(
-                    text: ' Faça login',
-                    style: TextStyle(color: colorBlue),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          TextScreenButton(appRoute: AppRoutes.logIn, textGray: "Já tem uma conta?", textBlue: " Fazer login."),
         ],
       ),
     ),
