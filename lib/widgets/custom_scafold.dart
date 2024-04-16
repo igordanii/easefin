@@ -12,16 +12,10 @@ class CustomScaffold extends StatelessWidget {
         elevation: 0,
       ),
       extendBodyBehindAppBar: true,
-      body: Stack(
-        children: [
-          Image.asset(
-            'assets/images/background.jpg',
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity,
-          ),
-          SafeArea(child: child!)
-        ],
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 50),
+        color: const Color(0xFFF1EFE7),
+        child: SafeArea(child: child!)
       ),
     );
   }

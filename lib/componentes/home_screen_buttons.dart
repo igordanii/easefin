@@ -8,12 +8,20 @@ class HomeScreenButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {
-        Navigator.pushNamed(context, appRoute);
-      },
-      child: Text(text),
-      backgroundColor: Colors.white70,
-    );
+     return OutlinedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, appRoute);
+        },
+        style: OutlinedButton.styleFrom(
+          side: const BorderSide(
+            color: Color.fromRGBO(6, 88, 246, 1),
+          ),
+          backgroundColor: Colors.white,
+          minimumSize: const Size.fromHeight(50),
+          shadowColor: const Color.fromARGB(255, 46, 46, 46),
+          elevation: 6,
+        ),
+        child: Text(text, style: const TextStyle(color: Color.fromRGBO(6, 88, 246, 1), fontWeight: FontWeight.bold)),
+      );
   }
 }
