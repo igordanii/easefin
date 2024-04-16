@@ -1,6 +1,8 @@
 import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import '../screens/welcome_screen.dart';
+import '../screens/login_screen.dart';
+import '../screens/signup_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -12,8 +14,8 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         AppRoutes.home: (context) => WelcomeScreen(),
-        AppRoutes.logIn: (context) => WelcomeScreen(),
-        AppRoutes.signUp: (context) => WelcomeScreen(),
+        AppRoutes.logIn: (context) => LoginScreen(),
+        AppRoutes.signUp: (context) => SignupScreen(),
       },
       title: 'EaseFin',
       theme: ThemeData(
