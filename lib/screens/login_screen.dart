@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
               width: 150,
               height: 150,
             ),
-            InputText(text: "Email", hint: "Digite seu email"),
+            InputText(text: "E-mail", hint: "Digite seu e-mail"),
             const SizedBox(height: 16),
             InputPassword(text: "Senha", hint: "Digite seu senha"),
             const SizedBox(height: 16),
@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-                  // Navigator.pushNamed(context,  AppRoutes.logIn); Rota para tela de recuperação
+                  Navigator.pushNamed(context,  AppRoutes.passReset);
                 },
                 child: Text('Esqueci minha senha',
                     style:

@@ -2,6 +2,8 @@ import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import '../screens/welcome_screen.dart';
 import '../screens/login_screen.dart';
+import '../screens/pass_reset_screen.dart';
+import '../screens/confirm_pass_reset_screen.dart';
 import '../screens/signup_screen.dart';
 import '../screens/home_screen.dart';
 
@@ -18,6 +20,8 @@ class App extends StatelessWidget {
         AppRoutes.logIn: (context) => LoginScreen(),
         AppRoutes.signUp: (context) => SignupScreen(),
         AppRoutes.userHome: (context) => HomeScreen(),
+        AppRoutes.passReset: (context) => PasswordResetScreen(),
+        AppRoutes.confirmPassReset: (context) => ConfirmPasswordResetScreen(),
       },
       title: 'EaseFin',
       theme: ThemeData(

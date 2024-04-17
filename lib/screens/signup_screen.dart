@@ -24,7 +24,7 @@ class SignupScreen extends StatelessWidget {
             ),
             InputText(text: "Nome", hint: "Digite seu nome e sobrenome"),
             const SizedBox(height: 16),
-            InputText(text: "Email", hint: "Digite seu email"),
+            InputText(text: "E-mail", hint: "Digite seu e-mail"),
             const SizedBox(height: 16),
             InputPassword(
                 text: "Senha(mínimo de 6 caracteres)", hint: "Crie uma senha"),
