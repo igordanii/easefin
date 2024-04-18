@@ -42,11 +42,15 @@ class PasswordResetScreen extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           TextScreenButton(
-              appRoute: AppRoutes.signUp,
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.signUp);
+              },
               textGray: "Ainda não possui conta?",
               textBlue: " Criar conta"),
           TextScreenButton(
-              appRoute: AppRoutes.logIn,
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.logIn);
+              },
               textGray: "Ou retorne para?",
               textBlue: " Fazer login."),
         ]),

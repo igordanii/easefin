@@ -44,7 +44,9 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             TextScreenButton(
-                appRoute: AppRoutes.signUp,
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.signUp);
+                },
                 textGray: "Ainda não possui conta?",
                 textBlue: " Criar conta."),
           ],

@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
 class TextScreenButton extends StatelessWidget {
-  final String appRoute;
   final String textGray;
+  final VoidCallback onPressed;
   final String textBlue;
   const TextScreenButton(
-      {super.key, required this.appRoute, required this.textGray, required this.textBlue});
+      {super.key,
+      required this.textGray,
+      required this.textBlue,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {
-        Navigator.pushNamed(context, appRoute);
-      },
+      onPressed: onPressed,
       child: RichText(
         text: TextSpan(
           text: textGray,

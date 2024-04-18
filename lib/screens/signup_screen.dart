@@ -39,7 +39,9 @@ class SignupScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             TextScreenButton(
-                appRoute: AppRoutes.logIn,
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.logIn);
+                },
                 textGray: "Já tem uma conta?",
                 textBlue: " Fazer login."),
           ],
