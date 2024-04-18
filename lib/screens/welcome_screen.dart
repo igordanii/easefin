@@ -22,9 +22,13 @@ class WelcomeScreen extends StatelessWidget {
                 fit: BoxFit.contain,
               ),
             ),
-            const Column(
+            Column(
               children: [
-                DefaultScreenButton(appRoute: AppRoutes.logIn, text: "Entrar"),
+                DefaultScreenButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.logIn);
+                    },
+                    text: "Log In"),
                 SizedBox(height: 20),
                 HomeScreenButton(
                     appRoute: AppRoutes.signUp, text: "Criar uma conta"),

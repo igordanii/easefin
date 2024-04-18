@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context,  AppRoutes.passReset);
+                  Navigator.pushNamed(context, AppRoutes.passReset);
                 },
                 child: Text('Esqueci minha senha',
                     style:
@@ -36,7 +36,12 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
-            DefaultScreenButton(appRoute: AppRoutes.userHome, text: "Entrar"),
+            DefaultScreenButton(
+              text: "Entrar",
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.userHome);
+              },
+            ),
             const SizedBox(height: 16),
             TextScreenButton(
                 appRoute: AppRoutes.signUp,

@@ -8,31 +8,32 @@ class ConfirmPasswordResetScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return CustomScaffold(
-    child: Form(
-      child: Column(
-        children: <Widget>[
+    return CustomScaffold(
+      child: Form(
+        child: Column(children: <Widget>[
           Image.asset(
             'assets/images/logop.png',
             width: 150,
             height: 150,
           ),
-          Text(
-              "Enviamos um link para o seu e-mail cadastrado.",
-              style:
-                const TextStyle(color: Color.fromRGBO(6, 88, 246, 1), fontSize: 20, fontWeight: FontWeight.bold)
-            ),
+          Text("Enviamos um link para o seu e-mail cadastrado.",
+              style: const TextStyle(
+                  color: Color.fromRGBO(6, 88, 246, 1),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold)),
           const SizedBox(height: 25),
-          Text(
-            "Cheque sua caixa de entrada. :)",
-            style:
-              const TextStyle(color: const Color.fromRGBO(163, 163, 163, 1))
-          ),
+          Text("Cheque sua caixa de entrada. :)",
+              style: const TextStyle(
+                  color: const Color.fromRGBO(163, 163, 163, 1))),
           const SizedBox(height: 50),
-          DefaultScreenButton(appRoute: AppRoutes.logIn, text: "Fazer login"),
-        ]
+          DefaultScreenButton(
+            text: "Fazer login",
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.logIn);
+            },
+          ),
+        ]),
       ),
-    ),
-  );
+    );
   }
 }

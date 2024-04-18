@@ -32,7 +32,11 @@ class SignupScreen extends StatelessWidget {
             InputPassword(text: "Confirmar senha", hint: "Confirme sua senha"),
             const SizedBox(height: 40),
             DefaultScreenButton(
-                appRoute: AppRoutes.userHome, text: "Criar conta"),
+              text: "Criar conta",
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.userHome);
+              },
+            ),
             const SizedBox(height: 16),
             TextScreenButton(
                 appRoute: AppRoutes.logIn,
