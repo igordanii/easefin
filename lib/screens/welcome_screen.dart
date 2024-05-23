@@ -31,7 +31,9 @@ class WelcomeScreen extends StatelessWidget {
                     text: "Log In"),
                 SizedBox(height: 20),
                 HomeScreenButton(
-                    appRoute: AppRoutes.signUp, text: "Criar uma conta"),
+                  appRoute: AppRoutes.signUp,
+                  text: "Criar uma conta",
+                ),
               ],
             ),
           ],

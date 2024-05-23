@@ -1,3 +1,4 @@
+import 'package:finease/modules/auth/controllers/login_controller.dart';
 import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:finease/widgets/custom_scafold.dart';
@@ -5,12 +6,15 @@ import 'package:finease/componentes/default_screen_buttons.dart';
 import 'package:finease/componentes/text_screen_buttons.dart';
 import 'package:finease/componentes/input_text.dart';
 import 'package:finease/componentes/input_password.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final loginController = Provider.of<LoginController>(context);
+
     return CustomScaffold(
       child: Form(
         child: Column(
@@ -20,9 +24,17 @@ class LoginScreen extends StatelessWidget {
               width: 150,
               height: 150,
             ),
-            InputText(text: "E-mail", hint: "Digite seu e-mail"),
+            InputText(
+              controller: loginController.emailController,
+              text: "E-mail",
+              hint: "Digite seu e-mail",
+            ),
             const SizedBox(height: 16),
-            InputPassword(text: "Senha", hint: "Digite seu senha"),
+            InputPassword(
+              controller: loginController.passwordController,
+              text: "Senha",
+              hint: "Digite seu senha",
+            ),
             const SizedBox(height: 16),
             Container(
               alignment: Alignment.centerRight,
@@ -30,16 +42,18 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, AppRoutes.passReset);
                 },
-                child: Text('Esqueci minha senha',
-                    style:
-                        const TextStyle(color: Color.fromRGBO(6, 88, 246, 1))),
+                child: const Text(
+                  'Esqueci minha senha',
+                  style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1)),
+                ),
               ),
             ),
             const SizedBox(height: 40),
             DefaultScreenButton(
-              text: "Entrar",
+              text: loginController.isLoading ? 'Carregando' : "Entrar",
               onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.userHome);
+                loginController.login();
+                // Navigator.pushNamed(context, AppRoutes.userHome);
               },
             ),
             const SizedBox(height: 16),
