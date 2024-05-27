@@ -1,8 +1,8 @@
 import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:finease/widgets/custom_scafold.dart';
-import 'package:finease/componentes/default_screen_buttons.dart';
-import 'package:finease/componentes/home_screen_buttons.dart';
+import 'package:finease/components/default_screen_buttons.dart';
+import 'package:finease/components/home_screen_buttons.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

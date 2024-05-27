@@ -1,7 +1,7 @@
 import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:finease/widgets/custom_scafold.dart';
-import 'package:finease/componentes/default_screen_buttons.dart';
+import 'package:finease/components/default_screen_buttons.dart';
 
 class ConfirmPasswordResetScreen extends StatelessWidget {
   const ConfirmPasswordResetScreen({super.key});

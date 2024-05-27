@@ -1,10 +1,10 @@
 import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:finease/widgets/custom_scafold.dart';
-import 'package:finease/componentes/default_screen_buttons.dart';
-import 'package:finease/componentes/text_screen_buttons.dart';
-import 'package:finease/componentes/input_text.dart';
-import 'package:finease/componentes/input_password.dart';
+import 'package:finease/components/default_screen_buttons.dart';
+import 'package:finease/components/text_screen_buttons.dart';
+import 'package:finease/components/input_text.dart';
+import 'package:finease/components/input_password.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
