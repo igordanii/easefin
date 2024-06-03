@@ -10,26 +10,30 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      addPadding: true,
+      child: Column(
           children: [
-            Flexible(
-              child: Image.asset(
-                'assets/images/logo.png',
-                width: 300,
-                height: 300,
-                fit: BoxFit.contain,
-              ),
+            Image.asset(
+              'images/logot.png',
+              width: 150,
+              height: 150,
+              fit: BoxFit.contain,
             ),
+            Image.asset(
+              'images/welcome.png',
+              width: 300,
+              height: 300,
+              fit: BoxFit.contain,
+            ),
+            const SizedBox(height: 10),
             Column(
               children: [
                 DefaultScreenButton(
                     onPressed: () {
                       Navigator.pushNamed(context, AppRoutes.logIn);
                     },
-                    text: "Log In"),
-                SizedBox(height: 20),
+                    text: "Entrar"),
+                const SizedBox(height: 20),
                 HomeScreenButton(
                   appRoute: AppRoutes.signUp,
                   text: "Criar uma conta",
@@ -38,7 +42,6 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }

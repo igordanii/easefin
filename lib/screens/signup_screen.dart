@@ -14,6 +14,7 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
+      addPadding: true,
       child: Form(
         child: Column(
           children: <Widget>[

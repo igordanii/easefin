@@ -16,6 +16,7 @@ class LoginScreen extends StatelessWidget {
     final loginController = Provider.of<LoginController>(context);
 
     return CustomScaffold(
+      addPadding: true,
       child: Form(
         child: Column(
           children: <Widget>[

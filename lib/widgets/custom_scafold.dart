@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class CustomScaffold extends StatelessWidget {
   final Widget child;
-  const CustomScaffold({super.key, required this.child});
+  final bool addPadding;
+  const CustomScaffold({super.key, required this.child, this.addPadding = false});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +15,16 @@ class CustomScaffold extends StatelessWidget {
       ),
       extendBodyBehindAppBar: true,
       body: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 50),
-          color: const Color(0xFFF1EFE7),
-          child: SafeArea(child: child)),
+        color: const Color(0xFFF1EFE7),
+        child: SafeArea(
+          child: addPadding
+              ? Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: child,
+                )
+              : child,
+          ),
+      ),
     );
   }
 }
