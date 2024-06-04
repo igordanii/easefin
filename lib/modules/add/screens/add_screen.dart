@@ -35,7 +35,7 @@ class _AddScreenState extends State<AddScreen> {
         currentTab: currentTab,
         onTabChanged: changeTab,
       ),
-      backgroundColor: Color(0xFFD9D9D9),
+      backgroundColor: Color.fromARGB(255, 237, 235, 226),
     );
   }
 }

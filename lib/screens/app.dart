@@ -2,6 +2,7 @@ import 'package:finease/modules/auth/controllers/login_controller.dart';
 import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../screens/splash_screen.dart';
 import '../screens/welcome_screen.dart';
 import '../modules/auth/screens/login_screen.dart';
@@ -9,6 +10,12 @@ import '../screens/pass_reset_screen.dart';
 import '../screens/confirm_pass_reset_screen.dart';
 import '../screens/signup_screen.dart';
 import '../modules/home/screens/home_screen.dart';
+
+import '../modules/profile/screens/profile_screen.dart';
+import '../modules/profile/screens/edit_profile.dart';
+import '../modules/profile/screens/edit_password.dart';
+import '../modules/profile/screens//del_movements.dart';
+import '../modules/profile/screens/del_account.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -29,6 +36,11 @@ class App extends StatelessWidget {
           AppRoutes.userHome: (context) => HomeScreen(),
           AppRoutes.passReset: (context) => PasswordResetScreen(),
           AppRoutes.confirmPassReset: (context) => ConfirmPasswordResetScreen(),
+          AppRoutes.profile: (context) => ProfileScreen(),
+          AppRoutes.editProfile: (context) => EditProfile(),
+          AppRoutes.editPassword: (context) => EditPassword(),
+          AppRoutes.delMovements: (context) => DeleteMoviments(),
+          AppRoutes.delAccount: (context) => DeleteAccount(),
         },
         title: 'EaseFin',
         theme: ThemeData(

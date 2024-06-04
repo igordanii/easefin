@@ -42,7 +42,7 @@ class _StatementScreenState extends State<StatementScreen> {
         currentTab: currentTab,
         onTabChanged: changeTab,
       ),
-      backgroundColor: Color(0xFFD9D9D9),
+      backgroundColor: Color.fromARGB(255, 237, 235, 226),
     );
   }
 }
