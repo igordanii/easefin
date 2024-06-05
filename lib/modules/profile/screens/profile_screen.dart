@@ -45,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               children: [
                 Text(
-                  'Lívia Alves',
+                  'EaseFin',
                   style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1), fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 20),

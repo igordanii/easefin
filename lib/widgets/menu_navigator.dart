@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../modules/home/screens/home_screen.dart';
 import '../modules/statement/screens/statement_screen.dart';
-import '../modules/add/screens/add_screen.dart';
 import '../modules/planning/screens/planning_screen.dart';
 import '../modules/profile/screens/profile_screen.dart';
 

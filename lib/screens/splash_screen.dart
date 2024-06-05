@@ -1,5 +1,5 @@
-import 'dart:async';
 // import 'package:finease/utils/app_routes.dart';
+import 'package:finease/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:finease/widgets/custom_scafold.dart';
 
@@ -12,9 +12,22 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Future.delayed(const Duration(seconds: 3), () {
-    //   Navigator.pushReplacementNamed(context, '/welcome');
-    // });
+    delay();
+  }
+
+  Future<void> delay() async {
+    return await Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        Navigator.pushReplacement(
+          context,
+          PageRouteBuilder(pageBuilder: (BuildContext context,
+              Animation animation, Animation secondaryAnimation) {
+            return WelcomeScreen();
+          }),
+        );
+      },
+    );
   }
 
   @override
