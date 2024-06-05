@@ -11,4 +11,5 @@ abstract class AppRoutes {
   static const editPassword = "/edit-password";
   static const delAccount = "/del-account";
   static const delMovements = "/del-movements";
+  static const notifications = "/notifications";
 }

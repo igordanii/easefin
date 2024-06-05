@@ -5,7 +5,6 @@ import 'package:finease/components/default_screen_buttons.dart';
 
 class EditPassword extends StatelessWidget {
   const EditPassword({Key? key});
-  static const colorBlue = Color.fromRGBO(6, 88, 246, 1);
 
   @override
   Widget build(BuildContext context) {

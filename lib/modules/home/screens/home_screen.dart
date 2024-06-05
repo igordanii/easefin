@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../widgets/menu_navigator.dart'; 
 import '../../add/screens/add_screen.dart';
-import 'package:fl_chart/fl_chart.dart'; 
+import 'package:fl_chart/fl_chart.dart';
+import 'package:finease/utils/app_routes.dart'; 
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -48,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: IconButton(
                       icon: Image.asset('../assets/icons/notifications.png'),
                       onPressed: () {
-                        // adicionar rota para a tela de notificações
+                        Navigator.pushNamed(context, AppRoutes.notifications);
                       },
                     ),
                   )

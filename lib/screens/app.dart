@@ -17,6 +17,8 @@ import '../modules/profile/screens/edit_password.dart';
 import '../modules/profile/screens//del_movements.dart';
 import '../modules/profile/screens/del_account.dart';
 
+import '../modules/notifications/notifications.dart';
+
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -41,6 +43,7 @@ class App extends StatelessWidget {
           AppRoutes.editPassword: (context) => EditPassword(),
           AppRoutes.delMovements: (context) => DeleteMoviments(),
           AppRoutes.delAccount: (context) => DeleteAccount(),
+          AppRoutes.notifications: (context) => Notifications(),
         },
         title: 'EaseFin',
         theme: ThemeData(
