@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:finease/modules/auth/controllers/login_controller.dart';
 import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +55,14 @@ class LoginScreen extends StatelessWidget {
             DefaultScreenButton(
               text: loginController.isLoading ? 'Carregando' : "Entrar",
               onPressed: () {
-                loginController.login();
+                var token = loginController.login();
+                if (token == "123456") {
+                  Navigator.pushReplacementNamed(context, AppRoutes.statement);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(token)),
+                  );
+                }
                 // Navigator.pushNamed(context, AppRoutes.userHome);
               },
             ),

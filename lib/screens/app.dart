@@ -18,6 +18,7 @@ import '../modules/profile/screens//del_movements.dart';
 import '../modules/profile/screens/del_account.dart';
 
 import '../modules/notifications/notifications.dart';
+import '../modules/statement/screens/statement_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -44,6 +45,7 @@ class App extends StatelessWidget {
           AppRoutes.delMovements: (context) => DeleteMoviments(),
           AppRoutes.delAccount: (context) => DeleteAccount(),
           AppRoutes.notifications: (context) => Notifications(),
+          AppRoutes.statement: (context) => StatementScreen(),
         },
         title: 'EaseFin',
         theme: ThemeData(

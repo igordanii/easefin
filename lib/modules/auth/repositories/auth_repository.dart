@@ -4,16 +4,22 @@ import 'package:finease/modules/auth/dtos/credentials_dto.dart';
 class AuthRepository {
   final Dio dio = Dio();
 
-  Future<String> signIn(CredentialsDTO credentials) async {
+  String signIn(CredentialsDTO credentials) {
     print(credentials.email);
     print(credentials.password);
 
-    // final response = await dio.get('https://pub.dev');
+    Map<String, String> users = {
+      "igordanice@gmail.com": "123456",
+      "livia@example.com": "654321",
+      "wanessa@example.com": "123654",
+      "leonardo": "abcdef"
+    };
 
-    // if (response.statusCode != 200) {
-    //   return '';
-    // }
+    if (users.containsKey(credentials.email) &&
+        users[credentials.email] == credentials.password) {
+      return "123456";
+    }
 
-    return 'ABC' as String;
+    return "Usuário ou senha inválidos";
   }
 }
