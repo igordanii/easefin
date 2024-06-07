@@ -21,20 +21,73 @@ class _StatementScreenState extends State<StatementScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Conteúdo de transações'),
+      appBar: AppBar(
+        title: Text('Transações'),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(48.0),
+          child: Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'JUNHO',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          ),
+        ),
+      ),
+      body: ListView(
+        padding: EdgeInsets.all(16.0),
+        children: [
+          TransactionItem(
+            icon: Icons.shopping_bag,
+            title: 'Compra Vestido',
+            subtitle: 'Pessoal · Fatura Nubank',
+            amount: 'R\$ 100,00',
+          ),
+          TransactionItem(
+            icon: Icons.directions_car,
+            title: 'Uber',
+            subtitle: 'Transporte · Fatura Nubank',
+            amount: 'R\$ 19,90',
+          ),
+          TransactionItem(
+            icon: Icons.school,
+            title: 'Faculdade',
+            subtitle: 'Educação · Débito Itaú',
+            amount: 'R\$ 390,00',
+          ),
+          TransactionItem(
+            icon: Icons.wifi,
+            title: 'Internet',
+            subtitle: 'Casa · Débito Itaú',
+            amount: 'R\$ 100,00',
+          ),
+          TransactionItem(
+            icon: Icons.shopping_cart,
+            title: 'Mercado',
+            subtitle: 'Alimentação · Fatura Neon',
+            amount: 'R\$ 440,00',
+          ),
+          TransactionItem(
+            icon: Icons.local_hospital,
+            title: 'Farmácia SP',
+            subtitle: 'Saúde · Débito Itaú',
+            amount: 'R\$ 140,00',
+          ),
+        ],
       ),
       floatingActionButton: IconButton(
         icon: Image.asset(
-                '../../assets/icons/add.png',
-                width: 64,
-                height: 64,
-              ),
+          '../../assets/icons/add.png',
+          width: 64,
+          height: 64,
+        ),
         onPressed: () {
           Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => AddScreen()),
-        );
+            context,
+            MaterialPageRoute(builder: (context) => AddScreen()),
+          );
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -43,6 +96,53 @@ class _StatementScreenState extends State<StatementScreen> {
         onTabChanged: changeTab,
       ),
       backgroundColor: Color.fromARGB(255, 237, 235, 226),
+    );
+  }
+
+  Widget _buildLegendItem(String title, Color color) {
+    return Row(
+      children: [
+        Container(
+          width: 16,
+          height: 16,
+          color: color,
+        ),
+        SizedBox(width: 8.0),
+        Text(title, style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1), fontSize: 15)),
+      ],
+    );
+  }
+}
+
+class TransactionItem extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final String amount;
+
+  TransactionItem({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.amount,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0),
+        side: BorderSide(color: Colors.blue, width: 1),
+      ),
+      child: ListTile(
+        leading: Icon(icon, color: Colors.blue),
+        title: Text(title),
+        subtitle: Text(subtitle),
+        trailing: Text(
+          amount,
+          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+        ),
+      ),
     );
   }
 }
