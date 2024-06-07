@@ -24,11 +24,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
+        child: Stack(
+          clipBehavior: Clip.none,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
+              height: 150,
               color: Color.fromRGBO(6, 88, 246, 1),
+              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -36,7 +38,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Olá, \nEaseFin',
+                        'Olá,',
+                        style: TextStyle(fontSize: 20, color: Colors.white),
+                      ),
+                      Text(
+                        'EaseFin',
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ],
@@ -46,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Colors.white, 
                       borderRadius: BorderRadius.circular(12), 
                     ),
+                    margin: EdgeInsets.only(bottom: 30.0),
                     child: IconButton(
                       icon: Image.asset('../assets/icons/notifications.png'),
                       onPressed: () {
@@ -56,15 +63,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            Container(
-              margin: EdgeInsets.all(20.0),
-              padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
-                border: Border.all(color: Color.fromRGBO(6, 88, 246, 1)),
-              ),
-              child: Column(
+            Positioned(
+              top: 100, 
+              left: 150,
+              right: 150,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0),
+                  border: Border.all(color: Color.fromRGBO(6, 88, 246, 1)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 10,
+                      offset: Offset(0, 5),
+                    ),
+                  ],
+                ),
+                child: Column(
                   children: [
                     Text(
                       'R\$ 2.350,00',
@@ -84,96 +101,108 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-              padding: EdgeInsets.all(20.0),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
-                border: Border.all(color: Color.fromRGBO(6, 88, 246, 1)),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Despesas por categoria (%)',
-                    style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Color.fromRGBO(6, 88, 246, 1)),
+            ),
+            Column(
+              children: [
+                SizedBox(height: 230), 
+                Container(
+                  margin: EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(color: Color.fromRGBO(6, 88, 246, 1)),
                   ),
-                  SizedBox(height: 20.0),
-                  Container(
-                    height: 150.0,
-                    child: PieChart(
-                      PieChartData(
-                        sections: [
-                          PieChartSectionData(
-                            color: Color(0xFF7593B6),
-                            value: 30,
-                          ),
-                          PieChartSectionData(
-                            color: Color(0xFF6596BD),
-                            value: 25,
-                          ),
-                          PieChartSectionData(
-                            color: Color(0xFF0C4881),
-                            value: 20,
-                          ),
-                          PieChartSectionData(
-                            color: Color(0xFF022E55),
-                            value: 25,
-                          ),
-                        ],
-                        sectionsSpace: 2,
-                        centerSpaceRadius: 30,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 20.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _buildLegendItem('Casa', Color(0xFF7593B6)),
-                      _buildLegendItem('Educação', Color(0xFF6596BD)),
-                      _buildLegendItem('Alimentação', Color(0xFF0C4881)),
-                      _buildLegendItem('Outros', Color(0xFF022E55)),
+                      Text(
+                        'Despesas por categoria (%)',
+                        style: TextStyle(
+                          fontSize: 16.0, 
+                          fontWeight: FontWeight.bold, 
+                          color: Color.fromRGBO(6, 88, 246, 1)),
+                      ),
+                      SizedBox(height: 20.0),
+                      Container(
+                        height: 150.0,
+                        child: PieChart(
+                          PieChartData(
+                            sections: [
+                              PieChartSectionData(
+                                color: Color(0xFF7593B6),
+                                value: 30,
+                              ),
+                              PieChartSectionData(
+                                color: Color(0xFF6596BD),
+                                value: 25,
+                              ),
+                              PieChartSectionData(
+                                color: Color(0xFF0C4881),
+                                value: 20,
+                              ),
+                              PieChartSectionData(
+                                color: Color(0xFF022E55),
+                                value: 25,
+                              ),
+                            ],
+                            sectionsSpace: 2,
+                            centerSpaceRadius: 30,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20.0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          _buildLegendItem('Casa', Color(0xFF7593B6)),
+                          _buildLegendItem('Educação', Color(0xFF6596BD)),
+                          _buildLegendItem('Alimentação', Color(0xFF0C4881)),
+                          _buildLegendItem('Outros', Color(0xFF022E55)),
+                        ],
+                      ),
                     ],
                   ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-              padding: EdgeInsets.all(20.0),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
-                border: Border.all(color: Color.fromRGBO(6, 88, 246, 1)),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Próximos compromissos',
-                    style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Color.fromRGBO(6, 88, 246, 1)),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+                  padding: EdgeInsets.all(20.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(color: Color.fromRGBO(6, 88, 246, 1)),
                   ),
-                  SizedBox(height: 20.0),
-                  ListTile(
-                    leading: Icon(Icons.credit_card),
-                    title: Text('Fatura Nubank', style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1))),
-                    subtitle: Text('Vence amanhã - 14/06'),
-                    trailing: Text('R\$ 140,00', style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1), fontSize: 15)),
-                    iconColor: Color.fromRGBO(6, 88, 246, 1),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Próximos compromissos',
+                        style: TextStyle(
+                          fontSize: 16.0, 
+                          fontWeight: FontWeight.bold, 
+                          color: Color.fromRGBO(6, 88, 246, 1)),
+                      ),
+                      SizedBox(height: 20.0),
+                      ListTile(
+                        leading: Icon(Icons.credit_card),
+                        title: Text('Fatura Nubank', style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1))),
+                        subtitle: Text('Vence amanhã - 14/06'),
+                        trailing: Text('R\$ 140,00', style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1), fontSize: 15)),
+                        iconColor: Color.fromRGBO(6, 88, 246, 1),
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: Icon(Icons.home),
+                        title: Text('Aluguel', style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1))),
+                        subtitle: Text('Vence em dois dias - 16/06'),
+                        trailing: Text('R\$ 550,00', style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1), fontSize: 15)),
+                        iconColor: Color.fromRGBO(6, 88, 246, 1),
+                      ),
+                    ],
                   ),
-                  Divider(),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Aluguel', style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1))),
-                    subtitle: Text('Vence em dois dias - 16/06'),
-                    trailing: Text('R\$ 550,00', style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1), fontSize: 15)),
-                    iconColor: Color.fromRGBO(6, 88, 246, 1),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
@@ -200,13 +229,13 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildLegendItem(String title, Color colors) {
+  Widget _buildLegendItem(String title, Color color) {
     return Row(
       children: [
         Container(
           width: 16,
           height: 16,
-          color: colors,
+          color: color,
         ),
         SizedBox(width: 8.0),
         Text(title, style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1), fontSize: 15)),
