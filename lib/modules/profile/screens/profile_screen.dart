@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:finease/utils/app_routes.dart';
 import '../../../widgets/menu_navigator.dart'; 
-import '../../add/screens/add_screen.dart';
+import '../../add/screens/expense_screen.dart';
 import '../../../components/menu_button_profile.dart';
 
 
@@ -78,7 +78,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         onPressed: () {
           Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => AddScreen()),
+          MaterialPageRoute(builder: (context) => ExpenseScreen()),
         );
         },
       ),

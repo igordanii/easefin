@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../widgets/menu_navigator.dart'; 
-import '../../add/screens/add_screen.dart';
+import '../../add/screens/expense_screen.dart';
 
 class StatementScreen extends StatefulWidget {
   const StatementScreen({Key? key}) : super(key: key);
@@ -22,19 +22,12 @@ class _StatementScreenState extends State<StatementScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Transações'),
-        bottom: PreferredSize(
-          preferredSize: Size.fromHeight(48.0),
-          child: Container(
-            color: Colors.blue,
-            child: Center(
-              child: Text(
-                'JUNHO',
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-            ),
-          ),
-        ),
+        title: Text('Transações', 
+          style: TextStyle(color: Colors.white),
+          textAlign: TextAlign.center,),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        backgroundColor: Color.fromRGBO(6, 88, 246, 1),
       ),
       body: ListView(
         padding: EdgeInsets.all(16.0),
@@ -86,7 +79,7 @@ class _StatementScreenState extends State<StatementScreen> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => AddScreen()),
+            MaterialPageRoute(builder: (context) => ExpenseScreen()),
           );
         },
       ),
@@ -132,15 +125,22 @@ class TransactionItem extends StatelessWidget {
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8.0),
-        side: BorderSide(color: Colors.blue, width: 1),
+        side: BorderSide(color: Color.fromRGBO(6, 88, 246, 1)),
       ),
       child: ListTile(
-        leading: Icon(icon, color: Colors.blue),
-        title: Text(title),
+        leading: Icon(icon, color: Color.fromRGBO(6, 88, 246, 1)),
+        title: Text(
+          title,
+          style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1)),
+        ),
         subtitle: Text(subtitle),
         trailing: Text(
           amount,
-          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: Color.fromRGBO(6, 88, 246, 1),
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
+          ),
         ),
       ),
     );

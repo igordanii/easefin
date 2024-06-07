@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../widgets/menu_navigator.dart'; 
-import '../../add/screens/add_screen.dart';
+import '../../add/screens/expense_screen.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:finease/utils/app_routes.dart'; 
 
@@ -216,7 +216,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => AddScreen()),
+            MaterialPageRoute(builder: (context) => ExpenseScreen()),
           );
         },
       ),

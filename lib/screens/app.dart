@@ -19,6 +19,10 @@ import '../modules/profile/screens/del_account.dart';
 
 import '../modules/notifications/notifications.dart';
 
+import '../modules/add/screens/expense_screen.dart';
+import '../modules/add/screens/revenue_screen.dart';
+import '../modules/add/screens/goals_screen.dart';
+
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -44,6 +48,9 @@ class App extends StatelessWidget {
           AppRoutes.delMovements: (context) => DeleteMoviments(),
           AppRoutes.delAccount: (context) => DeleteAccount(),
           AppRoutes.notifications: (context) => Notifications(),
+          AppRoutes.expense: (context) => ExpenseScreen(),
+          AppRoutes.revenue: (context) => RevenueScreen(),
+          AppRoutes.goals: (context) => GoalsScreen(),
         },
         title: 'EaseFin',
         theme: ThemeData(

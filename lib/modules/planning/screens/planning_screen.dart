@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../widgets/menu_navigator.dart'; 
-import '../../add/screens/add_screen.dart';
+import '../../add/screens/expense_screen.dart';
 
 class PlanningScreen extends StatefulWidget {
   const PlanningScreen({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class _PlanningScreenState extends State<PlanningScreen> {
         onPressed: () {
           Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => AddScreen()),
+          MaterialPageRoute(builder: (context) => ExpenseScreen()),
         );
         },
       ),
