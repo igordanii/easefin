@@ -40,7 +40,7 @@ class Notifications extends StatelessWidget {
                               'Pague a sua fatura do Nubank!',
                               style: TextStyle(color: Color.fromRGBO(6, 88, 246, 1), fontSize: 14),
                             ),
-                            subtitle: Text('Sua fatura no valor de R\$ 840,00 vence amanhã, dia 14/06.'),
+                            subtitle: Text('Sua fatura no valor de R\$ 140,00 vence amanhã, dia 14/06.'),
                           ),
                         ),
                       ),

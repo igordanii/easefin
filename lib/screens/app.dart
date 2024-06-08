@@ -18,6 +18,7 @@ import '../modules/profile/screens//del_movements.dart';
 import '../modules/profile/screens/del_account.dart';
 
 import '../modules/notifications/notifications.dart';
+import '../modules/statement/screens/statement_screen.dart';
 
 import '../modules/add/screens/expense_screen.dart';
 import '../modules/add/screens/revenue_screen.dart';
@@ -48,6 +49,7 @@ class App extends StatelessWidget {
           AppRoutes.delMovements: (context) => DeleteMoviments(),
           AppRoutes.delAccount: (context) => DeleteAccount(),
           AppRoutes.notifications: (context) => Notifications(),
+          AppRoutes.statement: (context) => StatementScreen(),
           AppRoutes.expense: (context) => ExpenseScreen(),
           AppRoutes.revenue: (context) => RevenueScreen(),
           AppRoutes.goals: (context) => GoalsScreen(),

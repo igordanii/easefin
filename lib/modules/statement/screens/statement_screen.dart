@@ -22,51 +22,85 @@ class _StatementScreenState extends State<StatementScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Transações', 
+        title: Text(
+          'Transações', 
           style: TextStyle(color: Colors.white),
-          textAlign: TextAlign.center,),
+          textAlign: TextAlign.center,
+        ),
         centerTitle: true,
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromRGBO(6, 88, 246, 1),
       ),
-      body: ListView(
-        padding: EdgeInsets.all(16.0),
+      body: Column(
         children: [
-          TransactionItem(
-            icon: Icons.shopping_bag,
-            title: 'Compra Vestido',
-            subtitle: 'Pessoal · Fatura Nubank',
-            amount: 'R\$ 100,00',
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFFFFFFF),
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+                  textStyle: const TextStyle(fontSize: 16.0),
+                  minimumSize: Size(MediaQuery.of(context).size.width - 32, 48), // Ajustando a largura
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset('../assets/icons/arrow-left.png', width: 18.0, height: 18.0),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text('JUNHO', style: TextStyle(color: Color(0xFF888787))),
+                    ),
+                    Image.asset('../assets/icons/arrow-right.png', width: 18.0, height: 18.0),
+                  ],
+                ),
+              ),
+            ),
           ),
-          TransactionItem(
-            icon: Icons.directions_car,
-            title: 'Uber',
-            subtitle: 'Transporte · Fatura Nubank',
-            amount: 'R\$ 19,90',
-          ),
-          TransactionItem(
-            icon: Icons.school,
-            title: 'Faculdade',
-            subtitle: 'Educação · Débito Itaú',
-            amount: 'R\$ 390,00',
-          ),
-          TransactionItem(
-            icon: Icons.wifi,
-            title: 'Internet',
-            subtitle: 'Casa · Débito Itaú',
-            amount: 'R\$ 100,00',
-          ),
-          TransactionItem(
-            icon: Icons.shopping_cart,
-            title: 'Mercado',
-            subtitle: 'Alimentação · Fatura Neon',
-            amount: 'R\$ 440,00',
-          ),
-          TransactionItem(
-            icon: Icons.local_hospital,
-            title: 'Farmácia SP',
-            subtitle: 'Saúde · Débito Itaú',
-            amount: 'R\$ 140,00',
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.all(16.0),
+              children: [
+                TransactionItem(
+                  icon: Icons.shopping_bag,
+                  title: 'Compra Roupa',
+                  subtitle: 'Pessoal · Fatura Nubank',
+                  amount: 'R\$ 100,00',
+                ),
+                TransactionItem(
+                  icon: Icons.directions_car,
+                  title: 'Uber',
+                  subtitle: 'Transporte · Fatura Nubank',
+                  amount: 'R\$ 19,90',
+                ),
+                TransactionItem(
+                  icon: Icons.school,
+                  title: 'Faculdade',
+                  subtitle: 'Educação · Débito Itaú',
+                  amount: 'R\$ 390,00',
+                ),
+                TransactionItem(
+                  icon: Icons.wifi,
+                  title: 'Internet',
+                  subtitle: 'Casa · Débito Itaú',
+                  amount: 'R\$ 100,00',
+                ),
+                TransactionItem(
+                  icon: Icons.shopping_cart,
+                  title: 'Mercado',
+                  subtitle: 'Alimentação · Fatura Neon',
+                  amount: 'R\$ 440,00',
+                ),
+                TransactionItem(
+                  icon: Icons.local_hospital,
+                  title: 'Farmácia SP',
+                  subtitle: 'Saúde · Débito Itaú',
+                  amount: 'R\$ 140,00',
+                ),
+              ],
+            ),
           ),
         ],
       ),

@@ -35,7 +35,6 @@ class SignupScreen extends StatelessWidget {
             DefaultScreenButton(
               text: "Criar conta",
               onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.userHome);
               },
             ),
             const SizedBox(height: 16),

@@ -1,6 +1,8 @@
 import 'package:finease/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import '../../../widgets/menu_navigator.dart'; 
+import 'package:finease/components/input_text.dart';
+import 'package:finease/components/default_screen_buttons.dart';
 
 class GoalsScreen extends StatefulWidget {
   const GoalsScreen({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class GoalsScreen extends StatefulWidget {
 class _GoalsScreenState extends State<GoalsScreen> {
   int currentTab = 2;
   int selectedButtonIndex = -1; 
+  TextEditingController _controller = TextEditingController();
 
   void changeTab(int index) {
     setState(() {
@@ -85,8 +88,54 @@ class _GoalsScreenState extends State<GoalsScreen> {
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromRGBO(6, 88, 246, 1),
       ),
-      body: Center(
-        child: Text('Metas'),
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 10.0),
+        child: Column(
+          children: <Widget>[
+            InputText(text: "Nome da meta", hint: "Nome da meta"),
+            SizedBox(height: 30),
+            DropdownButtonFormField<String>(
+              decoration: InputDecoration(
+                labelText: 'Selecione uma categoria',
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Color.fromRGBO(6, 88, 246, 1)),
+                ),
+                labelStyle: TextStyle(color: Color.fromRGBO(6, 88, 246, 1)),
+              ),
+              items: <String>['Saúde', 'Educação', 'Lazer']
+                  .map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (_) {},
+            ),
+            SizedBox(height: 12),
+            InputText(text: "Quanto quer juntar?", hint: "Informe o valor total da sua meta"),
+            SizedBox(height: 30),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Data limite',
+                hintText: 'Data para atingir esse valor',
+                suffixIcon: Icon(Icons.calendar_today, color: Color.fromRGBO(6, 88, 246, 1)),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Color.fromRGBO(6, 88, 246, 1)),
+                ),
+                labelStyle: TextStyle(color: Color.fromRGBO(6, 88, 246, 1)),
+              ),
+            ),
+            SizedBox(height: 12),
+            InputText(text: "Valor atual", hint: "Informe o valor que já possui"),
+            SizedBox(height: 36),
+            DefaultScreenButton(
+              text: "Salvar",
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.profile);
+              },
+            ),
+          ],
+        ),
       ),
       floatingActionButton: IconButton(
         icon: Image.asset(

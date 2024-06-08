@@ -12,6 +12,7 @@ abstract class AppRoutes {
   static const delAccount = "/del-account";
   static const delMovements = "/del-movements";
   static const notifications = "/notifications";
+  static const statement = "statement";
   static const expense = "/expense";
   static const revenue = "/revenue";
   static const goals = "/goals";

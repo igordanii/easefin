@@ -10,20 +10,20 @@ class LoginController with ChangeNotifier {
 
   bool isLoading = false;
 
-  Future<void> login() async {
+  String login() {
     isLoading = true;
     notifyListeners();
-
-    await Future.delayed(const Duration(seconds: 5));
 
     final credentials = CredentialsDTO(
       emailController.text,
       passwordController.text,
     );
-    final token = await authRepository.signIn(credentials);
+
+    final token = authRepository.signIn(credentials);
 
     isLoading = false;
     notifyListeners();
     print(token);
+    return token;
   }
 }
